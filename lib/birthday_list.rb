@@ -10,7 +10,7 @@ class BirthdayList
 
   def print_birthdays
     @birthday_hash.each { |name, birthday| 
-      puts "Name: #{name.to_s}, Birthday: #{birthday.strftime("%d-%m-%y")}".strip }
+      puts "Name: #{name}, Birthday: #{birthday.strftime("%d-%m-%y")}"}
   end
 
   def birthdays_today
