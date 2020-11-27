@@ -13,4 +13,11 @@ class BirthdayList
     return "Name: #{name.to_s}, Birthday: #{birthday.strftime("%d-%m-%y")}" }
   end
 
+  def birthdays_today
+    @birthday_hash.each { |name, birthday| 
+        t = Time.now
+        if birthday.day == t.day && birthday.month == t.month
+          return "Name: #{name}" 
+        end }
+  end
 end
