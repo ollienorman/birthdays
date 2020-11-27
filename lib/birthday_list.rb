@@ -1,11 +1,11 @@
 class BirthdayList
-  
+  require 'time'
   def initialize
     @birthday_hash = {}
   end
 
   def add_birthday(name, birthday)
-    @birthday_hash[name.to_sym] = birthday
+    @birthday_hash[name.to_sym] = Time.parse(birthday)
   end
 
   def print_birthdays
