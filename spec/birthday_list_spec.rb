@@ -2,18 +2,14 @@ require 'birthday_list'
 
 describe BirthdayList do
   describe "#add_birthday" do
-    it "adds a birthday that can be accessed later" do
       birthday_list = BirthdayList.new
       birthday_list.add_birthday("Test", "27-11-1991")
-      expect(birthday_list.print_birthdays).to eq "Name: Test, Birthday: 27-11-91"
-    end
+      specify {expect{birthday_list.print_birthdays}.to output("Name: Test, Birthday: 27-11-91\n").to_stdout}
   end
 
   describe "#birthdays_today" do
-    it "checks to see if any birthdays are today, and returns the result" do
-      birthday_list = BirthdayList.new
-      birthday_list.add_birthday("Test", "27-11-1991")
-      expect(birthday_list.birthdays_today).to eq "Name: Test"
-    end
+    birthday_list = BirthdayList.new
+    birthday_list.add_birthday("Test", "27-11-1991")
+    specify {expect{birthday_list.birthdays_today}.to output("Name: Test\n").to_stdout}
   end
 end
