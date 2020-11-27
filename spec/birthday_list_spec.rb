@@ -5,7 +5,8 @@ describe BirthdayList do
     it "adds a birthday that can be accessed later" do
       birthday_list = BirthdayList.new
       birthday = Time.new(1991, 6, 6)
-      birthday_list.add_birthday("Ollie", birthday)
+      name = "Ollie"
+      birthday_list.add_birthday(name, birthday)
       expect(birthday_list.print_birthdays).to eq "Name: Ollie, Birthday: 06-06-91"
     end
   end
